@@ -80,7 +80,8 @@ def make_panel_district_week(df: pd.DataFrame) -> pd.DataFrame:
         g = g.sort_values("week_start").reset_index(drop=True)
         for l in config.LAG_STEPS:
             g[f"count_lag{l}"] = g["count"].shift(l)
-        g["count_roll_mean4"] = g["count"].rolling(config.ROLLING_WINDOW, min_periods=1).mean()
+        # Rolling mean debe usar SOLO valores pasados (shift antes de rolling)
+        g["count_roll_mean4"] = g["count"].shift(1).rolling(config.ROLLING_WINDOW, min_periods=1).mean()
         return g
 
     panel = panel.groupby("district", group_keys=False).apply(_add_lags)
@@ -136,6 +137,7 @@ def get_feature_target_arrays(
             "week_start",
             "target_bin_t1",
             "target_count_t1",
+            "count",  # Excluir count actual (data leakage)
         ]
         and np.issubdtype(df[c].dtype, np.number)
     ]

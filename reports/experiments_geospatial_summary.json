@@ -1,0 +1,20 @@
+{
+  "total_experiments": 20,
+  "best_model": {
+    "name": "train_4_custom_loop_tf1",
+    "pr_auc": 0.5553308725357056,
+    "recall_at_k": 0.002541295951232314
+  },
+  "mean_pr_auc": 0.4415262073278427,
+  "std_pr_auc": 0.09604179380038728,
+  "mean_recall_at_k": 0.0024936467176303267,
+  "mean_time_sec": 46.09253814220428,
+  "dataset_info": {
+    "total_grids": 894,
+    "total_weeks": 288,
+    "train_samples": 164211,
+    "test_samples": 51315,
+    "positive_rate_train": 0.05210369452834129,
+    "positive_rate_test": 0.06134658306837082
+  }
+}

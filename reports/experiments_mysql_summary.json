@@ -1,0 +1,10 @@
+{
+  "total_experiments": 20,
+  "best_model": {
+    "name": "loss_weighted_bce",
+    "pr_auc": 1.0
+  },
+  "mean_pr_auc": 0.95,
+  "std_pr_auc": 0.22360679774997896,
+  "mean_time_sec": 70.30797758102418
+}

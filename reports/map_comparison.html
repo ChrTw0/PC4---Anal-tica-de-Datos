@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_94373a205c6299ac96a0b1c4bfe35005 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed;
+                top: 10px; left: 50px; width: 450px; height: 70px;
+                background-color: white; border:2px solid grey; z-index:9999;
+                font-size:14px; padding: 10px">
+    <b>Comparación: Predicciones vs Realidad</b><br>
+    🟡 Amarillo = Predicho alto | 🔴 Rojo = Hotspot real
+    </div>
+    
+    
+            <div class="folium-map" id="map_94373a205c6299ac96a0b1c4bfe35005" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_94373a205c6299ac96a0b1c4bfe35005 = L.map(
+                "map_94373a205c6299ac96a0b1c4bfe35005",
+                {
+                    center: [-12.05, -77.03],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d53680aed3c775153696d405eab48981 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_d53680aed3c775153696d405eab48981.addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+            var circle_marker_d8f5f0f701724de7aa271a14579d4c0e = L.circleMarker(
+                [-11.97, -77.08],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_81b6d3d21b5f28b99e227c19fd8ef493 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f2b93094851689555c57f505bcda4994 = $(`<div id="html_f2b93094851689555c57f505bcda4994" style="width: 100.0%; height: 100.0%;">                 <b>Predicho como Hotspot</b><br>                 Score: 0.134<br>                 Realidad: 53 semanas con extorsión             </div>`)[0];
+                popup_81b6d3d21b5f28b99e227c19fd8ef493.setContent(html_f2b93094851689555c57f505bcda4994);
+            
+        
+
+        circle_marker_d8f5f0f701724de7aa271a14579d4c0e.bindPopup(popup_81b6d3d21b5f28b99e227c19fd8ef493)
+        ;
+
+        
+    
+    
+            var circle_marker_32ce0166889740acc8ef2b3208347793 = L.circleMarker(
+                [-12.21, -76.93],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_5fb516e241e901bea1805626933a3d58 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_78bd32dd60946d7502ea03e91ed69708 = $(`<div id="html_78bd32dd60946d7502ea03e91ed69708" style="width: 100.0%; height: 100.0%;">                 <b>Predicho como Hotspot</b><br>                 Score: 0.134<br>                 Realidad: 48 semanas con extorsión             </div>`)[0];
+                popup_5fb516e241e901bea1805626933a3d58.setContent(html_78bd32dd60946d7502ea03e91ed69708);
+            
+        
+
+        circle_marker_32ce0166889740acc8ef2b3208347793.bindPopup(popup_5fb516e241e901bea1805626933a3d58)
+        ;
+
+        
+    
+    
+            var circle_marker_f502a4e3e2b8384bec66ffbe168b6913 = L.circleMarker(
+                [-11.91, -77.0],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_97776ec04c622ecddfb7707509f11c10 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_08b6c6c5e34d9453427533e5b7d55ba1 = $(`<div id="html_08b6c6c5e34d9453427533e5b7d55ba1" style="width: 100.0%; height: 100.0%;">                 <b>Predicho como Hotspot</b><br>                 Score: 0.133<br>                 Realidad: 48 semanas con extorsión             </div>`)[0];
+                popup_97776ec04c622ecddfb7707509f11c10.setContent(html_08b6c6c5e34d9453427533e5b7d55ba1);
+            
+        
+
+        circle_marker_f502a4e3e2b8384bec66ffbe168b6913.bindPopup(popup_97776ec04c622ecddfb7707509f11c10)
+        ;
+
+        
+    
+    
+            var circle_marker_d9a11bd0866967d094ac086ec62abe9b = L.circleMarker(
+                [-12.030000000000001, -77.14],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_244fee80827e845088f23509b5d20eb4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_709f2e81e4f6836647ac78c2dbeb7a50 = $(`<div id="html_709f2e81e4f6836647ac78c2dbeb7a50" style="width: 100.0%; height: 100.0%;">                 <b>Predicho como Hotspot</b><br>                 Score: 0.132<br>                 Realidad: 49 semanas con extorsión             </div>`)[0];
+                popup_244fee80827e845088f23509b5d20eb4.setContent(html_709f2e81e4f6836647ac78c2dbeb7a50);
+            
+        
+
+        circle_marker_d9a11bd0866967d094ac086ec62abe9b.bindPopup(popup_244fee80827e845088f23509b5d20eb4)
+        ;
+
+        
+    
+    
+            var circle_marker_d71f4403f4bda8890c62d4fcf07325de = L.circleMarker(
+                [-12.030000000000001, -77.05],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_d25038e01d32fd3f3f7b65a033b6d335 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8674f5aa8c72c260e352385ddaae21ac = $(`<div id="html_8674f5aa8c72c260e352385ddaae21ac" style="width: 100.0%; height: 100.0%;">                 <b>Predicho como Hotspot</b><br>                 Score: 0.132<br>                 Realidad: 48 semanas con extorsión             </div>`)[0];
+                popup_d25038e01d32fd3f3f7b65a033b6d335.setContent(html_8674f5aa8c72c260e352385ddaae21ac);
+            
+        
+
+        circle_marker_d71f4403f4bda8890c62d4fcf07325de.bindPopup(popup_d25038e01d32fd3f3f7b65a033b6d335)
+        ;
+
+        
+    
+    
+            var circle_marker_05040241ad000b859673144c929afafd = L.circleMarker(
+                [-12.040000000000001, -76.88],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_cd9e4fe80ccf81e88aa8bece4bcc9cca = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aaff51ff988ee88b96ed089827e76880 = $(`<div id="html_aaff51ff988ee88b96ed089827e76880" style="width: 100.0%; height: 100.0%;">                 <b>Predicho como Hotspot</b><br>                 Score: 0.132<br>                 Realidad: 44 semanas con extorsión             </div>`)[0];
+                popup_cd9e4fe80ccf81e88aa8bece4bcc9cca.setContent(html_aaff51ff988ee88b96ed089827e76880);
+            
+        
+
+        circle_marker_05040241ad000b859673144c929afafd.bindPopup(popup_cd9e4fe80ccf81e88aa8bece4bcc9cca)
+        ;
+
+        
+    
+    
+            var circle_marker_da10e19d2e7e6d4ddffa0e27d9d80612 = L.circleMarker(
+                [-11.84, -77.06],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_bbdc30b8dcd6ceb646a4fef47caa7def = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_32823867a98d917f8940a4a8510b9bce = $(`<div id="html_32823867a98d917f8940a4a8510b9bce" style="width: 100.0%; height: 100.0%;">                 <b>Predicho como Hotspot</b><br>                 Score: 0.132<br>                 Realidad: 47 semanas con extorsión             </div>`)[0];
+                popup_bbdc30b8dcd6ceb646a4fef47caa7def.setContent(html_32823867a98d917f8940a4a8510b9bce);
+            
+        
+
+        circle_marker_da10e19d2e7e6d4ddffa0e27d9d80612.bindPopup(popup_bbdc30b8dcd6ceb646a4fef47caa7def)
+        ;
+
+        
+    
+    
+            var circle_marker_aa85959e28152a2dc8e013b52298e7b9 = L.circleMarker(
+                [-12.19, -76.97],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_463ee56314967dc1d005741a11ba819c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_91d43ba71ef70cc75b7a3458b5f9c649 = $(`<div id="html_91d43ba71ef70cc75b7a3458b5f9c649" style="width: 100.0%; height: 100.0%;">                 <b>Predicho como Hotspot</b><br>                 Score: 0.131<br>                 Realidad: 47 semanas con extorsión             </div>`)[0];
+                popup_463ee56314967dc1d005741a11ba819c.setContent(html_91d43ba71ef70cc75b7a3458b5f9c649);
+            
+        
+
+        circle_marker_aa85959e28152a2dc8e013b52298e7b9.bindPopup(popup_463ee56314967dc1d005741a11ba819c)
+        ;
+
+        
+    
+    
+            var circle_marker_eee2406dac257060eecad03b5932f4f0 = L.circleMarker(
+                [-11.4, -77.15],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_2fd834c4d39961e1bef934757db550e4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_17b2086a998d08b0f865345efcfa208c = $(`<div id="html_17b2086a998d08b0f865345efcfa208c" style="width: 100.0%; height: 100.0%;">                 <b>Predicho como Hotspot</b><br>                 Score: 0.130<br>                 Realidad: 46 semanas con extorsión             </div>`)[0];
+                popup_2fd834c4d39961e1bef934757db550e4.setContent(html_17b2086a998d08b0f865345efcfa208c);
+            
+        
+
+        circle_marker_eee2406dac257060eecad03b5932f4f0.bindPopup(popup_2fd834c4d39961e1bef934757db550e4)
+        ;
+
+        
+    
+    
+            var circle_marker_4b52ec77eaef083cc42aefdc910777ff = L.circleMarker(
+                [-12.16, -77.02],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_591a2adf9584477101211fbbb8390a6b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1406f0d9c379e79ba004f5c32727e618 = $(`<div id="html_1406f0d9c379e79ba004f5c32727e618" style="width: 100.0%; height: 100.0%;">                 <b>Predicho como Hotspot</b><br>                 Score: 0.130<br>                 Realidad: 44 semanas con extorsión             </div>`)[0];
+                popup_591a2adf9584477101211fbbb8390a6b.setContent(html_1406f0d9c379e79ba004f5c32727e618);
+            
+        
+
+        circle_marker_4b52ec77eaef083cc42aefdc910777ff.bindPopup(popup_591a2adf9584477101211fbbb8390a6b)
+        ;
+
+        
+    
+    
+            var circle_marker_cefd39929d571c9f17816c09d0dcf416 = L.circleMarker(
+                [-11.870000000000001, -77.07000000000001],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_12d2dfcbf51ad055a261b63eab324c96 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9b645da8491f0e826b6aef024d8e3af3 = $(`<div id="html_9b645da8491f0e826b6aef024d8e3af3" style="width: 100.0%; height: 100.0%;">                 <b>Predicho como Hotspot</b><br>                 Score: 0.130<br>                 Realidad: 45 semanas con extorsión             </div>`)[0];
+                popup_12d2dfcbf51ad055a261b63eab324c96.setContent(html_9b645da8491f0e826b6aef024d8e3af3);
+            
+        
+
+        circle_marker_cefd39929d571c9f17816c09d0dcf416.bindPopup(popup_12d2dfcbf51ad055a261b63eab324c96)
+        ;
+
+        
+    
+    
+            var circle_marker_411f284afd91052abb266e3d52ce1d8b = L.circleMarker(
+                [-11.94, -77.0],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_5524454e640b790103e1fd93862fc5ff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3760647b9f99522b2ea4cdc421150b3a = $(`<div id="html_3760647b9f99522b2ea4cdc421150b3a" style="width: 100.0%; height: 100.0%;">                 <b>Predicho como Hotspot</b><br>                 Score: 0.129<br>                 Realidad: 48 semanas con extorsión             </div>`)[0];
+                popup_5524454e640b790103e1fd93862fc5ff.setContent(html_3760647b9f99522b2ea4cdc421150b3a);
+            
+        
+
+        circle_marker_411f284afd91052abb266e3d52ce1d8b.bindPopup(popup_5524454e640b790103e1fd93862fc5ff)
+        ;
+
+        
+    
+    
+            var circle_marker_9662cf294b9137febc81d12b6175160d = L.circleMarker(
+                [-12.16, -76.91],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_1426a87c568f32dfd4ea31103d5ca55a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4864493dfdb1b9dbdb1ae9850f7dc5e7 = $(`<div id="html_4864493dfdb1b9dbdb1ae9850f7dc5e7" style="width: 100.0%; height: 100.0%;">                 <b>Predicho como Hotspot</b><br>                 Score: 0.129<br>                 Realidad: 45 semanas con extorsión             </div>`)[0];
+                popup_1426a87c568f32dfd4ea31103d5ca55a.setContent(html_4864493dfdb1b9dbdb1ae9850f7dc5e7);
+            
+        
+
+        circle_marker_9662cf294b9137febc81d12b6175160d.bindPopup(popup_1426a87c568f32dfd4ea31103d5ca55a)
+        ;
+
+        
+    
+    
+            var circle_marker_73fee9c63bcc3cb2522fd64377818868 = L.circleMarker(
+                [-12.05, -77.06],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_cf92d7ff52a42c0c1c39a03752391f4a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1ab9d759981c46345a289b7f216cb8cf = $(`<div id="html_1ab9d759981c46345a289b7f216cb8cf" style="width: 100.0%; height: 100.0%;">                 <b>Predicho como Hotspot</b><br>                 Score: 0.128<br>                 Realidad: 48 semanas con extorsión             </div>`)[0];
+                popup_cf92d7ff52a42c0c1c39a03752391f4a.setContent(html_1ab9d759981c46345a289b7f216cb8cf);
+            
+        
+
+        circle_marker_73fee9c63bcc3cb2522fd64377818868.bindPopup(popup_cf92d7ff52a42c0c1c39a03752391f4a)
+        ;
+
+        
+    
+    
+            var circle_marker_fa871684326a8a3ad2c6b5b11f4dd5f7 = L.circleMarker(
+                [-12.040000000000001, -76.97],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_bfeda5ce2fe9a209a8996ce57485e3bd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f3fb06c10b423f677d2de54c48be2cb7 = $(`<div id="html_f3fb06c10b423f677d2de54c48be2cb7" style="width: 100.0%; height: 100.0%;">                 <b>Predicho como Hotspot</b><br>                 Score: 0.128<br>                 Realidad: 47 semanas con extorsión             </div>`)[0];
+                popup_bfeda5ce2fe9a209a8996ce57485e3bd.setContent(html_f3fb06c10b423f677d2de54c48be2cb7);
+            
+        
+
+        circle_marker_fa871684326a8a3ad2c6b5b11f4dd5f7.bindPopup(popup_bfeda5ce2fe9a209a8996ce57485e3bd)
+        ;
+
+        
+    
+    
+            var circle_marker_b951f647f4dc563a17eec8ee0a4a04d3 = L.circleMarker(
+                [-12.08, -77.01],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_3751a3941f5f7c55fa8cf72c28a101a7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_82421be7cc4d041a3a0f03934c414d64 = $(`<div id="html_82421be7cc4d041a3a0f03934c414d64" style="width: 100.0%; height: 100.0%;">                 <b>Predicho como Hotspot</b><br>                 Score: 0.127<br>                 Realidad: 41 semanas con extorsión             </div>`)[0];
+                popup_3751a3941f5f7c55fa8cf72c28a101a7.setContent(html_82421be7cc4d041a3a0f03934c414d64);
+            
+        
+
+        circle_marker_b951f647f4dc563a17eec8ee0a4a04d3.bindPopup(popup_3751a3941f5f7c55fa8cf72c28a101a7)
+        ;
+
+        
+    
+    
+            var circle_marker_c5c6acbee3f8f4a04652a5dfec0ccdb0 = L.circleMarker(
+                [-11.99, -77.04],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_418a436ef639656865f4a4eb2f8d7598 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2b63d8eae4fe789e589d05cca7d397b6 = $(`<div id="html_2b63d8eae4fe789e589d05cca7d397b6" style="width: 100.0%; height: 100.0%;">                 <b>Predicho como Hotspot</b><br>                 Score: 0.127<br>                 Realidad: 44 semanas con extorsión             </div>`)[0];
+                popup_418a436ef639656865f4a4eb2f8d7598.setContent(html_2b63d8eae4fe789e589d05cca7d397b6);
+            
+        
+
+        circle_marker_c5c6acbee3f8f4a04652a5dfec0ccdb0.bindPopup(popup_418a436ef639656865f4a4eb2f8d7598)
+        ;
+
+        
+    
+    
+            var circle_marker_bf738ec324e8f19a9e04c63c52cc2978 = L.circleMarker(
+                [-12.030000000000001, -77.04],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_5126032f047b9d5fac259d68c2824653 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_562cdffe7f68d799344107bdce33656b = $(`<div id="html_562cdffe7f68d799344107bdce33656b" style="width: 100.0%; height: 100.0%;">                 <b>Predicho como Hotspot</b><br>                 Score: 0.126<br>                 Realidad: 41 semanas con extorsión             </div>`)[0];
+                popup_5126032f047b9d5fac259d68c2824653.setContent(html_562cdffe7f68d799344107bdce33656b);
+            
+        
+
+        circle_marker_bf738ec324e8f19a9e04c63c52cc2978.bindPopup(popup_5126032f047b9d5fac259d68c2824653)
+        ;
+
+        
+    
+    
+            var circle_marker_594fe4b2e2d144499146d1726cc7cd5b = L.circleMarker(
+                [-12.14, -77.0],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_0cb59bdf7f926438bd9b71d9d15c3d13 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e0fb8ebcc94f2e948b74994dcf3bcf5d = $(`<div id="html_e0fb8ebcc94f2e948b74994dcf3bcf5d" style="width: 100.0%; height: 100.0%;">                 <b>Predicho como Hotspot</b><br>                 Score: 0.126<br>                 Realidad: 42 semanas con extorsión             </div>`)[0];
+                popup_0cb59bdf7f926438bd9b71d9d15c3d13.setContent(html_e0fb8ebcc94f2e948b74994dcf3bcf5d);
+            
+        
+
+        circle_marker_594fe4b2e2d144499146d1726cc7cd5b.bindPopup(popup_0cb59bdf7f926438bd9b71d9d15c3d13)
+        ;
+
+        
+    
+    
+            var circle_marker_c10e43dac6e01e68b0cf33236a1c5713 = L.circleMarker(
+                [-11.96, -76.8],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_f82e7ad9a1524f01a390c30772dac122 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a055846911281603d89ee46887837379 = $(`<div id="html_a055846911281603d89ee46887837379" style="width: 100.0%; height: 100.0%;">                 <b>Predicho como Hotspot</b><br>                 Score: 0.125<br>                 Realidad: 40 semanas con extorsión             </div>`)[0];
+                popup_f82e7ad9a1524f01a390c30772dac122.setContent(html_a055846911281603d89ee46887837379);
+            
+        
+
+        circle_marker_c10e43dac6e01e68b0cf33236a1c5713.bindPopup(popup_f82e7ad9a1524f01a390c30772dac122)
+        ;
+
+        
+    
+    
+            var circle_marker_8e3f8b9223794ce18b0db3bc5614d8df = L.circleMarker(
+                [-11.97, -77.08],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_c08df2b9059d31a3ccc5ee0cdcce93ad = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7dc1c44b4cc76e74e4d984b21827a68a = $(`<div id="html_7dc1c44b4cc76e74e4d984b21827a68a" style="width: 100.0%; height: 100.0%;">                 <b>Hotspot Real</b><br>                 Semanas: 53<br>                 Score predicho: 0.134             </div>`)[0];
+                popup_c08df2b9059d31a3ccc5ee0cdcce93ad.setContent(html_7dc1c44b4cc76e74e4d984b21827a68a);
+            
+        
+
+        circle_marker_8e3f8b9223794ce18b0db3bc5614d8df.bindPopup(popup_c08df2b9059d31a3ccc5ee0cdcce93ad)
+        ;
+
+        
+    
+    
+            var circle_marker_939d6b3dd3ef8d6b4a863dcee94001c9 = L.circleMarker(
+                [-12.030000000000001, -77.14],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_b98a1055047bc41ac95721ed970b8c41 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ac1fbf48751c7c26d2fad2ac8a144828 = $(`<div id="html_ac1fbf48751c7c26d2fad2ac8a144828" style="width: 100.0%; height: 100.0%;">                 <b>Hotspot Real</b><br>                 Semanas: 49<br>                 Score predicho: 0.132             </div>`)[0];
+                popup_b98a1055047bc41ac95721ed970b8c41.setContent(html_ac1fbf48751c7c26d2fad2ac8a144828);
+            
+        
+
+        circle_marker_939d6b3dd3ef8d6b4a863dcee94001c9.bindPopup(popup_b98a1055047bc41ac95721ed970b8c41)
+        ;
+
+        
+    
+    
+            var circle_marker_dc56871ced06439343849e5b4f66e532 = L.circleMarker(
+                [-11.91, -77.0],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_a3828dce13fec0d60bf1961c6de0c617 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_43ca34c4d0857e31435b382716b95276 = $(`<div id="html_43ca34c4d0857e31435b382716b95276" style="width: 100.0%; height: 100.0%;">                 <b>Hotspot Real</b><br>                 Semanas: 48<br>                 Score predicho: 0.133             </div>`)[0];
+                popup_a3828dce13fec0d60bf1961c6de0c617.setContent(html_43ca34c4d0857e31435b382716b95276);
+            
+        
+
+        circle_marker_dc56871ced06439343849e5b4f66e532.bindPopup(popup_a3828dce13fec0d60bf1961c6de0c617)
+        ;
+
+        
+    
+    
+            var circle_marker_1319fce1d034a716f0570980b2bc09cc = L.circleMarker(
+                [-11.94, -77.0],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_536118087260b337646b22be5e036a10 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c19c9f1ea2dd2f1a4dd94d76fae0b342 = $(`<div id="html_c19c9f1ea2dd2f1a4dd94d76fae0b342" style="width: 100.0%; height: 100.0%;">                 <b>Hotspot Real</b><br>                 Semanas: 48<br>                 Score predicho: 0.129             </div>`)[0];
+                popup_536118087260b337646b22be5e036a10.setContent(html_c19c9f1ea2dd2f1a4dd94d76fae0b342);
+            
+        
+
+        circle_marker_1319fce1d034a716f0570980b2bc09cc.bindPopup(popup_536118087260b337646b22be5e036a10)
+        ;
+
+        
+    
+    
+            var circle_marker_8d0499b57101b94f0f4388d7bda82604 = L.circleMarker(
+                [-12.030000000000001, -77.05],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_447623fcba07e529212172aac8194e09 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_81a2c924c620437b714f7ec5c1595443 = $(`<div id="html_81a2c924c620437b714f7ec5c1595443" style="width: 100.0%; height: 100.0%;">                 <b>Hotspot Real</b><br>                 Semanas: 48<br>                 Score predicho: 0.132             </div>`)[0];
+                popup_447623fcba07e529212172aac8194e09.setContent(html_81a2c924c620437b714f7ec5c1595443);
+            
+        
+
+        circle_marker_8d0499b57101b94f0f4388d7bda82604.bindPopup(popup_447623fcba07e529212172aac8194e09)
+        ;
+
+        
+    
+    
+            var circle_marker_6b078206780c33ec7a70639dcc40a556 = L.circleMarker(
+                [-12.05, -77.06],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_7b51348702b10bb07e021e80f407ea60 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_459c73dd07a7af5a6bcf5c52475632a2 = $(`<div id="html_459c73dd07a7af5a6bcf5c52475632a2" style="width: 100.0%; height: 100.0%;">                 <b>Hotspot Real</b><br>                 Semanas: 48<br>                 Score predicho: 0.128             </div>`)[0];
+                popup_7b51348702b10bb07e021e80f407ea60.setContent(html_459c73dd07a7af5a6bcf5c52475632a2);
+            
+        
+
+        circle_marker_6b078206780c33ec7a70639dcc40a556.bindPopup(popup_7b51348702b10bb07e021e80f407ea60)
+        ;
+
+        
+    
+    
+            var circle_marker_205cc5fe296a743436c1f83de0b44940 = L.circleMarker(
+                [-12.21, -76.93],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_6fe3548efb800d42e0dd0dccc1180482 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_54e7b44e11613f6e83f98163960a8bfc = $(`<div id="html_54e7b44e11613f6e83f98163960a8bfc" style="width: 100.0%; height: 100.0%;">                 <b>Hotspot Real</b><br>                 Semanas: 48<br>                 Score predicho: 0.134             </div>`)[0];
+                popup_6fe3548efb800d42e0dd0dccc1180482.setContent(html_54e7b44e11613f6e83f98163960a8bfc);
+            
+        
+
+        circle_marker_205cc5fe296a743436c1f83de0b44940.bindPopup(popup_6fe3548efb800d42e0dd0dccc1180482)
+        ;
+
+        
+    
+    
+            var circle_marker_822e2c4512c4267473fdec33179b493d = L.circleMarker(
+                [-11.84, -77.06],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_a3e38a12f35b19a6e315d539324d6fd5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fa5579b53339d2bb48dcd01c656c4405 = $(`<div id="html_fa5579b53339d2bb48dcd01c656c4405" style="width: 100.0%; height: 100.0%;">                 <b>Hotspot Real</b><br>                 Semanas: 47<br>                 Score predicho: 0.132             </div>`)[0];
+                popup_a3e38a12f35b19a6e315d539324d6fd5.setContent(html_fa5579b53339d2bb48dcd01c656c4405);
+            
+        
+
+        circle_marker_822e2c4512c4267473fdec33179b493d.bindPopup(popup_a3e38a12f35b19a6e315d539324d6fd5)
+        ;
+
+        
+    
+    
+            var circle_marker_54276e0990007b7619d7ef7cdaf8986e = L.circleMarker(
+                [-12.040000000000001, -76.97],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_b1fbb60c6d52b5febc657243f3e4243f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d1549a625676b6a58309019a2d67ae0a = $(`<div id="html_d1549a625676b6a58309019a2d67ae0a" style="width: 100.0%; height: 100.0%;">                 <b>Hotspot Real</b><br>                 Semanas: 47<br>                 Score predicho: 0.128             </div>`)[0];
+                popup_b1fbb60c6d52b5febc657243f3e4243f.setContent(html_d1549a625676b6a58309019a2d67ae0a);
+            
+        
+
+        circle_marker_54276e0990007b7619d7ef7cdaf8986e.bindPopup(popup_b1fbb60c6d52b5febc657243f3e4243f)
+        ;
+
+        
+    
+    
+            var circle_marker_eb9496bf67b18694bbc0eb718a53b22c = L.circleMarker(
+                [-12.19, -76.97],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_084463c2973194151e233e77c8e7cc8b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c44d9c71127a2f50a7f09b0a8ffd7c8b = $(`<div id="html_c44d9c71127a2f50a7f09b0a8ffd7c8b" style="width: 100.0%; height: 100.0%;">                 <b>Hotspot Real</b><br>                 Semanas: 47<br>                 Score predicho: 0.131             </div>`)[0];
+                popup_084463c2973194151e233e77c8e7cc8b.setContent(html_c44d9c71127a2f50a7f09b0a8ffd7c8b);
+            
+        
+
+        circle_marker_eb9496bf67b18694bbc0eb718a53b22c.bindPopup(popup_084463c2973194151e233e77c8e7cc8b)
+        ;
+
+        
+    
+    
+            var circle_marker_751bf9e8c5b59da80a41b575888ea0a8 = L.circleMarker(
+                [-11.4, -77.15],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_0c68819641f08a595585f5e882617cc7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fbba154cad9253193b07d104814548d4 = $(`<div id="html_fbba154cad9253193b07d104814548d4" style="width: 100.0%; height: 100.0%;">                 <b>Hotspot Real</b><br>                 Semanas: 46<br>                 Score predicho: 0.130             </div>`)[0];
+                popup_0c68819641f08a595585f5e882617cc7.setContent(html_fbba154cad9253193b07d104814548d4);
+            
+        
+
+        circle_marker_751bf9e8c5b59da80a41b575888ea0a8.bindPopup(popup_0c68819641f08a595585f5e882617cc7)
+        ;
+
+        
+    
+    
+            var circle_marker_c295abf2224c39f383627e5858edcc3c = L.circleMarker(
+                [-11.870000000000001, -77.07000000000001],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_e37073ef25fd7f65290879321791c756 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_04512d8d76e8282137d6758ac0282e29 = $(`<div id="html_04512d8d76e8282137d6758ac0282e29" style="width: 100.0%; height: 100.0%;">                 <b>Hotspot Real</b><br>                 Semanas: 45<br>                 Score predicho: 0.130             </div>`)[0];
+                popup_e37073ef25fd7f65290879321791c756.setContent(html_04512d8d76e8282137d6758ac0282e29);
+            
+        
+
+        circle_marker_c295abf2224c39f383627e5858edcc3c.bindPopup(popup_e37073ef25fd7f65290879321791c756)
+        ;
+
+        
+    
+    
+            var circle_marker_d5c733b91cc8a409c9b56a7089d86213 = L.circleMarker(
+                [-12.16, -76.91],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_b0c2fd05c59c9eb3673b40d115ef8d3e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_30f666cdfbf133055170073b249e04fd = $(`<div id="html_30f666cdfbf133055170073b249e04fd" style="width: 100.0%; height: 100.0%;">                 <b>Hotspot Real</b><br>                 Semanas: 45<br>                 Score predicho: 0.129             </div>`)[0];
+                popup_b0c2fd05c59c9eb3673b40d115ef8d3e.setContent(html_30f666cdfbf133055170073b249e04fd);
+            
+        
+
+        circle_marker_d5c733b91cc8a409c9b56a7089d86213.bindPopup(popup_b0c2fd05c59c9eb3673b40d115ef8d3e)
+        ;
+
+        
+    
+    
+            var circle_marker_71654025ca95c5b45026e2589d347087 = L.circleMarker(
+                [-11.99, -77.04],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_8811d232a02b9c9055e754ac7899dbe2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ceb711436d8757763e1e7c59c7370258 = $(`<div id="html_ceb711436d8757763e1e7c59c7370258" style="width: 100.0%; height: 100.0%;">                 <b>Hotspot Real</b><br>                 Semanas: 44<br>                 Score predicho: 0.127             </div>`)[0];
+                popup_8811d232a02b9c9055e754ac7899dbe2.setContent(html_ceb711436d8757763e1e7c59c7370258);
+            
+        
+
+        circle_marker_71654025ca95c5b45026e2589d347087.bindPopup(popup_8811d232a02b9c9055e754ac7899dbe2)
+        ;
+
+        
+    
+    
+            var circle_marker_8d566edc550a6d8f8d6da71e29f8d379 = L.circleMarker(
+                [-12.040000000000001, -76.88],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_b71511402db812cc872b676433ca86c8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7030b882cf6cd15ef75fcffc3b9c0ee1 = $(`<div id="html_7030b882cf6cd15ef75fcffc3b9c0ee1" style="width: 100.0%; height: 100.0%;">                 <b>Hotspot Real</b><br>                 Semanas: 44<br>                 Score predicho: 0.132             </div>`)[0];
+                popup_b71511402db812cc872b676433ca86c8.setContent(html_7030b882cf6cd15ef75fcffc3b9c0ee1);
+            
+        
+
+        circle_marker_8d566edc550a6d8f8d6da71e29f8d379.bindPopup(popup_b71511402db812cc872b676433ca86c8)
+        ;
+
+        
+    
+    
+            var circle_marker_9df36d0525ef912584baeaf3b66135f0 = L.circleMarker(
+                [-12.16, -77.02],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_bb9f4bf6ffcd5053f5b100c006e5ad73 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e60ba1d82ea42451871b82c1da3d673a = $(`<div id="html_e60ba1d82ea42451871b82c1da3d673a" style="width: 100.0%; height: 100.0%;">                 <b>Hotspot Real</b><br>                 Semanas: 44<br>                 Score predicho: 0.130             </div>`)[0];
+                popup_bb9f4bf6ffcd5053f5b100c006e5ad73.setContent(html_e60ba1d82ea42451871b82c1da3d673a);
+            
+        
+
+        circle_marker_9df36d0525ef912584baeaf3b66135f0.bindPopup(popup_bb9f4bf6ffcd5053f5b100c006e5ad73)
+        ;
+
+        
+    
+    
+            var circle_marker_3ce9f84d77abd193653ae67b85b65139 = L.circleMarker(
+                [-12.14, -77.0],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_09e5e42c6528aba8f788c8f9152c209d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_82c21108fa9db823e24357c8eb75137f = $(`<div id="html_82c21108fa9db823e24357c8eb75137f" style="width: 100.0%; height: 100.0%;">                 <b>Hotspot Real</b><br>                 Semanas: 42<br>                 Score predicho: 0.126             </div>`)[0];
+                popup_09e5e42c6528aba8f788c8f9152c209d.setContent(html_82c21108fa9db823e24357c8eb75137f);
+            
+        
+
+        circle_marker_3ce9f84d77abd193653ae67b85b65139.bindPopup(popup_09e5e42c6528aba8f788c8f9152c209d)
+        ;
+
+        
+    
+    
+            var circle_marker_edf243c9231e5568d5a4fff38c3f4c95 = L.circleMarker(
+                [-12.030000000000001, -77.04],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_524084187b12dc4bcd715b044122ebc5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ffc4910b64f9db578595e2681e3bf26d = $(`<div id="html_ffc4910b64f9db578595e2681e3bf26d" style="width: 100.0%; height: 100.0%;">                 <b>Hotspot Real</b><br>                 Semanas: 41<br>                 Score predicho: 0.126             </div>`)[0];
+                popup_524084187b12dc4bcd715b044122ebc5.setContent(html_ffc4910b64f9db578595e2681e3bf26d);
+            
+        
+
+        circle_marker_edf243c9231e5568d5a4fff38c3f4c95.bindPopup(popup_524084187b12dc4bcd715b044122ebc5)
+        ;
+
+        
+    
+    
+            var circle_marker_9fca38ae5cd27bf9f706501612d07e8c = L.circleMarker(
+                [-12.08, -77.01],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_5e8d25f9be2021863d37a6db593dd263 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_44ced14d2eca4772d27e37643d834bfb = $(`<div id="html_44ced14d2eca4772d27e37643d834bfb" style="width: 100.0%; height: 100.0%;">                 <b>Hotspot Real</b><br>                 Semanas: 41<br>                 Score predicho: 0.127             </div>`)[0];
+                popup_5e8d25f9be2021863d37a6db593dd263.setContent(html_44ced14d2eca4772d27e37643d834bfb);
+            
+        
+
+        circle_marker_9fca38ae5cd27bf9f706501612d07e8c.bindPopup(popup_5e8d25f9be2021863d37a6db593dd263)
+        ;
+
+        
+    
+    
+            var circle_marker_bd0b38dec548f0bb466a46790f3a5d20 = L.circleMarker(
+                [-11.83, -77.13],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_94373a205c6299ac96a0b1c4bfe35005);
+        
+    
+        var popup_4202e822b02d234e9e74c5c06cfa9969 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_50f85c2ddda29e2fbf64956281297d4a = $(`<div id="html_50f85c2ddda29e2fbf64956281297d4a" style="width: 100.0%; height: 100.0%;">                 <b>Hotspot Real</b><br>                 Semanas: 40<br>                 Score predicho: 0.125             </div>`)[0];
+                popup_4202e822b02d234e9e74c5c06cfa9969.setContent(html_50f85c2ddda29e2fbf64956281297d4a);
+            
+        
+
+        circle_marker_bd0b38dec548f0bb466a46790f3a5d20.bindPopup(popup_4202e822b02d234e9e74c5c06cfa9969)
+        ;
+
+        
+    
+</script>
+</html>
